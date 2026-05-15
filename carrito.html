@@ -57,19 +57,40 @@
                     <!-- JS carga los productos del carrito -->
                 </div>
                 <div class="formularioCliente">
-                    <input type="text" id="nombreCliente" placeholder="Nombre completo">
-                    <input type="text" id="telefonoCliente" placeholder="Teléfono">
-                    <input type="text" id="direccionCliente" placeholder="Dirección de entrega">
-                    <select id="metodoPago">
-                        <option value="">Método de pago</option>
-                        <option value="Transferencia">Transferencia</option>
-                        <option value="Efectivo">Efectivo</option>
-                        <option value="Mercado Pago">Mercado Pago</option>
-                    </select>
 
-    <textarea id="observaciones" placeholder="Observaciones"></textarea>
+            <label for="nombreCliente">Nombre completo</label>
+            <input 
+                type="text" 
+                id="nombreCliente" 
+                placeholder="Ingresá tu nombre">
 
-</div>
+            <label for="telefonoCliente">Teléfono</label>
+            <input 
+                type="text" 
+                id="telefonoCliente" 
+                placeholder="2991234567">
+
+        <label for="direccionCliente">Dirección</label>
+        <input 
+            type="text" 
+            id="direccionCliente" 
+            placeholder="Calle, número y barrio">
+
+        <label for="metodoPago">Método de pago</label>
+        <select id="metodoPago">
+            <option value="">Seleccionar</option>
+            <option value="Transferencia">Transferencia</option>
+            <option value="Mercado Pago">Mercado Pago</option>
+            <option value="Efectivo">Efectivo</option>
+        </select>
+
+        <label for="observaciones">Observaciones</label>
+            <textarea 
+                id="observaciones" 
+            placeholder="Ej: entregar por la tarde">
+            </textarea>
+
+        </div>
 
                 <div id="carritoAcciones" class="carritoAcciones disable">
                     <div class="carritoAccionesIzquierda">

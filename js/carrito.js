@@ -157,4 +157,11 @@ let mensaje = `Hola! Quiero realizar un pedido.%0A%0A`;
     const url = `https://wa.me/${numeroWhatsapp}?text=${mensaje}`;
 
     window.open(url, "_blank");
+    productosEnCarrito.length = 0;
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+
+    contenedorCarritoVacio.classList.add("disable");
+    contenedorCarritoProductos.classList.add("disable");
+    contenedorCarritoAcciones.classList.add("disable");
+    contenedorCarritoComprado.classList.remove("disable");
 }
