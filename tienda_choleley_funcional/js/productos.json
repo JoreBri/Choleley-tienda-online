@@ -1,0 +1,114 @@
+[
+    {
+        "id": "maternal-01",
+        "titulo": "Mochila maternal 01",
+        "imagen": "img/maternal/bolsoMaternal.png",
+        "categoria": { "nombre": "Maternal", "id": "maternal" },
+        "precio": 55000
+    },
+    {
+        "id": "maternal-02",
+        "titulo": "Cambiador maternal 01",
+        "imagen": "img/maternal/cambiador.png",
+        "categoria": { "nombre": "Maternal", "id": "maternal" },
+        "precio": 35000
+    },
+    {
+        "id": "maternal-03",
+        "titulo": "Porta libreta maternal 01",
+        "imagen": "img/portaLibreta.png",
+        "categoria": { "nombre": "Maternal", "id": "maternal" },
+        "precio": 35000
+    },
+    {
+        "id": "matero-01",
+        "titulo": "Bolso matero 01",
+        "imagen": "img/materos/bolsoMatero.png",
+        "categoria": { "nombre": "Materos", "id": "matero" },
+        "precio": 35000
+    },
+    {
+        "id": "matero-02",
+        "titulo": "Bolso matero 02",
+        "imagen": "img/materos/bolsoMatero2.png",
+        "categoria": { "nombre": "Materos", "id": "matero" },
+        "precio": 30000
+    },
+    {
+        "id": "promesa-01",
+        "titulo": "Combo promesa 01",
+        "imagen": "img/promesas/comboPromesa.png",
+        "categoria": { "nombre": "Promesas", "id": "promesa" },
+        "precio": 15000
+    },
+    {
+        "id": "promesa-02",
+        "titulo": "Cintas promesa",
+        "imagen": "img/promesas/promesa2.png",
+        "categoria": { "nombre": "Promesas", "id": "promesa" },
+        "precio": 8000
+    },
+    {
+        "id": "taza-01",
+        "titulo": "Tazas Ceramicas 01",
+        "imagen": "img/tazas/tazas.png",
+        "categoria": { "nombre": "Tazas", "id": "taza" },
+        "precio": 15000
+    },
+    {
+        "id": "taza-02",
+        "titulo": "Tazas plasticas 01",
+        "imagen": "img/tazas/setJardin.png",
+        "categoria": { "nombre": "Tazas", "id": "taza" },
+        "precio": 15000
+    },
+    {
+        "id": "gorra-01",
+        "titulo": "Gorra 01",
+        "imagen": "img/gorras/gorra.png",
+        "categoria": { "nombre": "Gorras", "id": "gorra" },
+        "precio": 25000
+    },
+    {
+        "id": "remera-01",
+        "titulo": "Remera 01",
+        "imagen": "img/remeras/remera.png",
+        "categoria": { "nombre": "Remeras", "id": "remera" },
+        "precio": 40000
+    },
+    {
+        "id": "yerbero-01",
+        "titulo": "Yerbero 01",
+        "imagen": "img/yerberos/yerbero(1).png",
+        "categoria": { "nombre": "Yerberos", "id": "yerbero" },
+        "precio": 15000
+    },
+    {
+        "id": "yerbero-02",
+        "titulo": "Yerbero 02",
+        "imagen": "img/yerberos/yerbero(2).png",
+        "categoria": { "nombre": "Yerberos", "id": "yerbero" },
+        "precio": 15000
+    },
+    {
+        "id": "yerbero-03",
+        "titulo": "Yerbero 03",
+        "imagen": "img/yerberos/yerbero(3).png",
+        "categoria": { "nombre": "Yerberos", "id": "yerbero" },
+        "precio": 15000
+    },
+    {
+        "id": "yerbero-04",
+        "titulo": "Yerbero 04",
+        "imagen": "img/yerberos/yerbero(4).png",
+        "categoria": { "nombre": "Yerberos", "id": "yerbero" },
+        "precio": 15000
+    },
+    {
+        "id": "yerbero-05",
+        "titulo": "Yerbero 05",
+        "imagen": "img/yerberos/yerbero(5).png",
+        "categoria": { "nombre": "Yerberos", "id": "yerbero" },
+        "precio": 15000
+    }
+]

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombre de la tienda | Carrito</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/stile.css">
+</head>
+<body class="bodyProductos">
+    <header class="headerProductos">
+        <div class="logo">
+            <span class="logoIcon">T</span>
+            <h1>MI TIENDA</h1>
+            <p>Texto de marca</p>
+        </div>
+
+        <nav class="navbar">
+            <ul class="menuIndex">
+                <li class="menuItem"><a href="productos.html">Productos</a></li>
+                <li class="menuItem"><a href="index.html">Inicio</a></li>
+                <li class="menuItem"><a href="#sobre-nosotros">Sobre nosotros</a></li>
+                <li class="menuItem"><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <aside class="sidebar">
+            <nav>
+                <ul class="menuProductos">
+                    <li>
+                        <a class="botonMenu botonVolver" href="productos.html">
+                            <i class="bi bi-arrow-left-circle-fill"></i> Seguir comprando
+                        </a>
+                    </li>
+                    <li>
+                        <a class="botonMenu botonCarrito active" href="carrito.html">
+                            <i class="bi bi-cart-fill"></i> Carrito
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+                <p class="textoFooter">© 2026 Mi tienda</p>
+            </footer>
+        </aside>
+
+        <main class="mainProductos">
+            <h2 class="tituloPrincipal">Carrito</h2>
+            <div class="contenedorCarrito">
+                <p id="carritoVacio" class="carritoVacio biCarrito">Tu carrito está vacío <i class="bi bi-emoji-frown"></i></p>
+
+                <div id="carritoProductos" class="carritoProductos disable">
+                    <!-- JS carga los productos del carrito -->
+                </div>
+
+                <div id="carritoAcciones" class="carritoAcciones disable">
+                    <div class="carritoAccionesIzquierda">
+                        <button id="carritoAccionesVaciar" class="carritoAccionesVaciar">Vaciar carrito</button>
+                    </div>
+                    <div class="carritoAccionesDerecha">
+                        <div class="carritoAccionesTotal">
+                            <p>Total:</p>
+                            <p id="total">$0</p>
+                        </div>
+                        <button id="carritoAccionesComprar" class="CarritoAccionesComprar">Comprar ahora</button>
+                    </div>
+                </div>
+
+                <p id="carritoComprado" class="carritoComprado biCarrito disable">Muchas gracias por tu compra <i class="bi bi-emoji-laughing"></i></p>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/carrito.js"></script>
+</body>
+</html>
