@@ -16,7 +16,7 @@
     {
         "id": "maternal-03",
         "titulo": "Porta libreta maternal 01",
-        "imagen": "img/portaLibreta.png",
+        "imagen": "img/maternal/portaLibreta.png",
         "categoria": { "nombre": "Maternal", "id": "maternal" },
         "precio": 35000
     },

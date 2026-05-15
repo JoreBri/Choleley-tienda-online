@@ -121,9 +121,25 @@ function actualizarTotal() {
 botonComprar.addEventListener("click", comprarCarrito);
 
 function comprarCarrito() {
-    const numeroWhatsapp = "5492996280373"; // Cambiá por tu número
 
-    let mensaje = "Hola! Quiero realizar este pedido:%0A%0A";
+const nombre = document.querySelector("#nombreCliente").value;
+const telefono = document.querySelector("#telefonoCliente").value;
+const direccion = document.querySelector("#direccionCliente").value;
+const metodoPago = document.querySelector("#metodoPago").value;
+const observaciones = document.querySelector("#observaciones").value;
+
+const numeroWhatsapp = "5492996280373";
+
+let mensaje = `Hola! Quiero realizar un pedido.%0A%0A`;
+
+    mensaje += `DATOS DEL CLIENTE%0A`;
+    mensaje += `*Nombre:* ${nombre}%0A`;
+    mensaje += `*Teléfono:* ${telefono}%0A`;
+    mensaje += `*Dirección:* ${direccion}%0A`;
+    mensaje += `*Pago:* ${metodoPago}%0A`;
+    mensaje += `*Observaciones:* ${observaciones}%0A%0A`;
+
+    mensaje += `PEDIDO:%0A%0A`;
 
     productosEnCarrito.forEach(producto => {
         mensaje += `• ${producto.titulo}%0A`;
@@ -133,20 +149,12 @@ function comprarCarrito() {
     });
 
     const total = productosEnCarrito.reduce((acc, producto) => {
-        return acc + producto.precio * producto.cantidad;
+        return acc + (producto.precio * producto.cantidad);
     }, 0);
 
-    mensaje += `Total: $${total}`;
+    mensaje += `TOTAL: $${total}`;
 
-    const urlWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${mensaje}`;
+    const url = `https://wa.me/${numeroWhatsapp}?text=${mensaje}`;
 
-    window.open(urlWhatsapp, "_blank");
-
-    productosEnCarrito.length = 0;
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
-
-    contenedorCarritoVacio.classList.add("disable");
-    contenedorCarritoProductos.classList.add("disable");
-    contenedorCarritoAcciones.classList.add("disable");
-    contenedorCarritoComprado.classList.remove("disable");
+    window.open(url, "_blank");
 }
