@@ -12,9 +12,7 @@
 <body class="bodyProductos">
     <header class="headerProductos">
         <div class="logo">
-            <span class="logoIcon">CH</span>
-            <h1>Choleley</h1>
-            <p>-Arte sublime-</p>
+            <a href="index.html"><img src="img/LogoCholeley.png" alt="Logo Choleley"></a>
         </div>
 
         <nav class="navbar">
@@ -56,54 +54,48 @@
                 <div id="carritoProductos" class="carritoProductos disable">
                     <!-- JS carga los productos del carrito -->
                 </div>
-                <div class="formularioCliente">
-
-            <label for="nombreCliente">Nombre completo</label>
-            <input 
-                type="text" 
-                id="nombreCliente" 
-                placeholder="Ingresá tu nombre">
-
-            <label for="telefonoCliente">Teléfono</label>
-            <input 
-                type="text" 
-                id="telefonoCliente" 
-                placeholder="2991234567">
-
-        <label for="direccionCliente">Dirección</label>
-        <input 
-            type="text" 
-            id="direccionCliente" 
-            placeholder="Calle, número y barrio">
-
-        <label for="metodoPago">Método de pago</label>
-        <select id="metodoPago">
-            <option value="">Seleccionar</option>
-            <option value="Transferencia">Transferencia</option>
-            <option value="Mercado Pago">Mercado Pago</option>
-            <option value="Efectivo">Efectivo</option>
-        </select>
-
-        <label for="observaciones">Observaciones</label>
-            <textarea 
-                id="observaciones" 
-            placeholder="Ej: entregar por la tarde">
-            </textarea>
-
-        </div>
+        <form id="formClientes">
+            <div class="formularioCliente">
+                <label for="nombreCliente">Nombre: 
+                    <input type="text" id="nombreCliente" placeholder="Ingresá tu nombre" required>
+                </label>
+                
+                    <label for="telefonoCliente">Teléfono:
+                        <input type="text" id="telefonoCliente" placeholder="2991234567" required>
+                    </label>
+            
+                    <label for="direccionCliente">Dirección:
+                        <input type="text" id="direccionCliente" placeholder="Calle, número y barrio" required>
+                    </label>
+                
+                    <label for="metodoPago">Método de pago
+                        <select id="metodoPago" required>
+                            <option value="">Seleccionar</option>
+                            <option value="Transferencia">Transferencia</option>
+                            <option value="Mercado Pago">Mercado Pago</option>
+                            <option value="Efectivo">Efectivo</option>
+                        </select>
+                    </label>
+                    
+                    <label for="observaciones">Observaciones:
+                        <textarea id="observaciones" placeholder="Ej: entregar por la tarde" required></textarea>
+                    </label>
+                    
+            </div>
 
                 <div id="carritoAcciones" class="carritoAcciones disable">
                     <div class="carritoAccionesIzquierda">
-                        <button id="carritoAccionesVaciar" class="carritoAccionesVaciar">Vaciar carrito</button>
+                        <button  type="button" id="carritoAccionesVaciar" class="carritoAccionesVaciar">Vaciar carrito</button>
                     </div>
                     <div class="carritoAccionesDerecha">
                         <div class="carritoAccionesTotal">
                             <p>Total:</p>
                             <p id="total">$0</p>
                         </div>
-                        <button id="carritoAccionesComprar" class="CarritoAccionesComprar">Comprar ahora</button>
+                        <button type="submit" id="carritoAccionesComprar" class="CarritoAccionesComprar">Comprar ahora</button>
                     </div>
                 </div>
+        </form>
 
                 <p id="carritoComprado" class="carritoComprado biCarrito disable">Muchas gracias por tu compra <i class="bi bi-emoji-laughing"></i></p>
             </div>

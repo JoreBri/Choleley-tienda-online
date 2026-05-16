@@ -118,45 +118,69 @@ function actualizarTotal() {
     contenedorTotal.innerText = `$${totalCalculado}`;
 }
 
-botonComprar.addEventListener("click", comprarCarrito);
+const formPedido = document.querySelector("#formClientes");
+formPedido.addEventListener("submit", comprarCarrito);
 
-function comprarCarrito() {
+function comprarCarrito(e) {
+    e.preventDefault();
 
-const nombre = document.querySelector("#nombreCliente").value;
-const telefono = document.querySelector("#telefonoCliente").value;
-const direccion = document.querySelector("#direccionCliente").value;
-const metodoPago = document.querySelector("#metodoPago").value;
-const observaciones = document.querySelector("#observaciones").value;
+    const nombre = document.querySelector("#nombreCliente").value;
+    const telefono = document.querySelector("#telefonoCliente").value;
+    const direccion = document.querySelector("#direccionCliente").value;
+    const metodoPago = document.querySelector("#metodoPago").value;
+    const observaciones = document.querySelector("#observaciones").value;
 
-const numeroWhatsapp = "5492996280373";
+    const numeroWhatsapp = "5492996280373";
 
-let mensaje = `Hola! Quiero realizar un pedido.%0A%0A`;
-
-    mensaje += `DATOS DEL CLIENTE%0A`;
-    mensaje += `*Nombre:* ${nombre}%0A`;
-    mensaje += `*Teléfono:* ${telefono}%0A`;
-    mensaje += `*Dirección:* ${direccion}%0A`;
-    mensaje += `*Pago:* ${metodoPago}%0A`;
-    mensaje += `*Observaciones:* ${observaciones}%0A%0A`;
-
-    mensaje += `PEDIDO:%0A%0A`;
-
-    productosEnCarrito.forEach(producto => {
-        mensaje += `• ${producto.titulo}%0A`;
-        mensaje += `Cantidad: ${producto.cantidad}%0A`;
-        mensaje += `Precio: $${producto.precio}%0A`;
-        mensaje += `Subtotal: $${producto.precio * producto.cantidad}%0A%0A`;
-    });
-
-    const total = productosEnCarrito.reduce((acc, producto) => {
-        return acc + (producto.precio * producto.cantidad);
+    const cantidadTotal = productosEnCarrito.reduce((acc, producto) => {
+        return acc + producto.cantidad;
     }, 0);
 
-    mensaje += `TOTAL: $${total}`;
+    const total = productosEnCarrito.reduce((acc, producto) => {
+        return acc + producto.precio * producto.cantidad;
+    }, 0);
+
+    let descuento = 0;
+    let totalFinal = total;
+
+    if (metodoPago === "Efectivo") {
+        descuento = total * 0.05;
+        totalFinal = total - descuento;
+    }
+
+    let mensaje = "*Hola vengo de la web de Choleley, quiero realizar un pedido*.%0A%0A";
+
+    mensaje += `Pedido: *${nombre}*%0A`;
+    mensaje += `Teléfono: *${telefono}*%0A`;
+    mensaje += `Pago: *${metodoPago}${metodoPago === "Efectivo" ? " (-5%)" : ""}*%0A`;
+    mensaje += `Localidad: *${direccion}*%0A`;
+
+    if (observaciones !== "") {
+        mensaje += `Observaciones: *${observaciones}*%0A`;
+    }
+
+    mensaje += `-------------------------------%0A%0A`;
+
+    productosEnCarrito.forEach(producto => {
+        mensaje += `${producto.categoria.nombre.toUpperCase()}%0A`;
+        mensaje += `- *${producto.titulo.toUpperCase()}*: `;
+        mensaje += `${producto.cantidad} x $${producto.precio} = `;
+        mensaje += `*$${producto.precio * producto.cantidad}*%0A%0A`;
+    });
+
+    mensaje += `ART.: *${cantidadTotal}*   TOTAL: *$${total}*%0A`;
+    mensaje += `-------------------------------%0A`;
+
+    if (metodoPago === "Efectivo") {
+        mensaje += `%0A*Efectivo (-5%)* *$-${descuento}*%0A`;
+    }
+
+    mensaje += `%0AFINAL A ABONAR: *$${totalFinal}*`;
 
     const url = `https://wa.me/${numeroWhatsapp}?text=${mensaje}`;
 
     window.open(url, "_blank");
+
     productosEnCarrito.length = 0;
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
 
@@ -164,4 +188,7 @@ let mensaje = `Hola! Quiero realizar un pedido.%0A%0A`;
     contenedorCarritoProductos.classList.add("disable");
     contenedorCarritoAcciones.classList.add("disable");
     contenedorCarritoComprado.classList.remove("disable");
+
+    const formularioCliente = document.querySelector(".formularioCliente");
+    formularioCliente.classList.add("disable");
 }
